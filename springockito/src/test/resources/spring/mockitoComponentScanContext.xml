@@ -7,8 +7,8 @@
     http://www.mockito.org/spring/mockito classpath:spring/mockito.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="org.kubek2k.mockito.spring.testbeans"/>
+    <context:component-scan base-package="org.kubek2k.springockito.core.testbeans"/>
 
-    <mockito:mock id="interfaceToBeMocked" class="org.kubek2k.mockito.spring.testbeans.InterfaceToBeMocked"/>
+    <mockito:mock id="interfaceToBeMocked" class="org.kubek2k.springockito.core.testbeans.InterfaceToBeMocked"/>
 
 </beans>

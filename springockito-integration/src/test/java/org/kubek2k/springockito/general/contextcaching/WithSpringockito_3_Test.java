@@ -1,5 +1,7 @@
 package org.kubek2k.springockito.general.contextcaching;
 
+import static org.fest.assertions.Assertions.assertThat;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kubek2k.springockito.annotations.SpringockitoContextLoader;
@@ -7,8 +9,6 @@ import org.mockito.internal.util.MockUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import static org.fest.assertions.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(loader = SpringockitoContextLoader.class, locations = {"classpath:spring/general/contextcaching/context.xml"})
@@ -19,6 +19,8 @@ public class WithSpringockito_3_Test {
 
     @Test
     public void shouldGetMockFromCachedContext() {
+        TestSuiteToImposeTestsOrder.insideSuite.assume();
+
         //given
         //as mock from cached context should have behaviour recorded
 

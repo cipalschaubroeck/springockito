@@ -1,1 +1,1 @@
-http\://www.mockito.org/spring/mockito=org.kubek2k.mockito.spring.MockitoNamespaceHandler
+http\://www.mockito.org/spring/mockito=org.kubek2k.springockito.core.MockitoNamespaceHandler

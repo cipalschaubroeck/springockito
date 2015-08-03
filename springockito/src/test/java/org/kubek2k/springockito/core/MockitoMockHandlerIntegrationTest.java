@@ -1,20 +1,20 @@
-package org.kubek2k.mockito.spring;
-
-import org.kubek2k.mockito.spring.testbeans.BeanToBeSpiedOrMockedAndStubbed;
-import org.mockito.cglib.proxy.Factory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.Test;
-
-import javax.annotation.Resource;
+package org.kubek2k.springockito.core;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.anyString;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
+
+import javax.annotation.Resource;
+
+import org.kubek2k.springockito.core.testbeans.BeanToBeSpiedOrMockedAndStubbed;
+import org.mockito.cglib.proxy.Factory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.Test;
 
 
 @ContextConfiguration(locations = {"classpath*:/spring/mockitoContext.xml"})

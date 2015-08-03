@@ -1,9 +1,9 @@
 package org.kubek2k.springockito.annotations.internal.definitions;
 
-import org.kubek2k.springockito.annotations.internal.MockitoMockSettings;
 import org.kubek2k.springockito.annotations.ReplaceWithMock;
 import org.kubek2k.springockito.annotations.internal.definer.MockDefiner;
 import org.kubek2k.springockito.annotations.internal.definitions.bean.SpringockitoBeanDefinition;
+import org.kubek2k.springockito.core.internal.mock.MockitoMockSettings;
 
 public class MockDefinition extends AbstractDefinition<MockDefinition>{
 
@@ -21,12 +21,12 @@ public class MockDefinition extends AbstractDefinition<MockDefinition>{
                 .withExtraInterfaces(annotationInstance.extraInterfaces());
     }
 
-    public MockDefinition withAnnotationInstance(ReplaceWithMock annotationInstance) {
+    public MockDefinition withAnnotationInstance(final ReplaceWithMock annotationInstance) {
         this.annotationInstance = annotationInstance;
         return this;
     }
 
-    public MockDefinition withMockClass(Class<?> mockClass) {
+    public MockDefinition withMockClass(final Class<?> mockClass) {
         this.mockClass = mockClass;
         return this;
     }

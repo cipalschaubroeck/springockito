@@ -1,5 +1,10 @@
 package org.kubek2k.springockito.general.contextcaching;
 
+import static org.fest.assertions.Assertions.assertThat;
+import static org.kubek2k.tools.TestUtil.isMock;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.doCallRealMethod;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kubek2k.springockito.annotations.ReplaceWithMock;
@@ -7,11 +12,6 @@ import org.kubek2k.springockito.annotations.SpringockitoContextLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import static org.fest.assertions.Assertions.assertThat;
-import static org.kubek2k.tools.TestUtil.isMock;
-import static org.mockito.BDDMockito.doCallRealMethod;
-import static org.mockito.BDDMockito.given;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(loader = SpringockitoContextLoader.class, locations = "classpath:spring/general/contextcaching/context.xml")
@@ -23,6 +23,8 @@ public class WithSpringockito_1_Test {
 
     @Test
     public void shouldChangeStateOfMock() {
+        TestSuiteToImposeTestsOrder.insideSuite.assume();
+
         //given
         doCallRealMethod()
                 .when(bean).incrementState();

@@ -1,26 +1,14 @@
-package org.kubek2k.mockito.spring.factory;
+package org.kubek2k.springockito.core.internal.mock;
 
+import org.kubek2k.springockito.core.SpringockitoResettable;
+import org.mockito.MockSettings;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.FactoryBean;
 
-import java.util.Map;
-import java.util.HashMap;
-
-public class MockFactoryBean<T> implements FactoryBean<T> {
-
+public class MockitoMockFactory<T> implements FactoryBean<T>, SpringockitoResettable {
     private Class<T> mockClass;
-    private String beanId;
-    private boolean useStaticMap;
-
+    private MockitoMockSettings mockitoMockSettings;
     private T thisInstance;
-
-    private static Map<String, Object> objectMap = new HashMap<String, Object>();
-
-    public MockFactoryBean(Class<T> mockClass, String beanId, boolean useStaticMap) {
-        this.mockClass = mockClass;
-        this.beanId = beanId;
-        this.useStaticMap = useStaticMap;
-    }
 
     public Class<? extends T> getObjectType() {
         return mockClass;
@@ -31,22 +19,32 @@ public class MockFactoryBean<T> implements FactoryBean<T> {
     }
 
     public T getObject() throws Exception {
-        if (useStaticMap) {
-            T instance = (T) objectMap.get(beanId);
-
-            if (instance == null) {
-                instance = Mockito.mock(mockClass);
-                objectMap.put(beanId, instance);
-            }
-
-            return instance;
-            
-        } else {
-            if (thisInstance == null) {
-                thisInstance = Mockito.mock(mockClass);
-            }
-            return thisInstance;
+        if (thisInstance == null) {
+            thisInstance = Mockito.mock(mockClass, getMockitoMockSettings());
         }
+        return thisInstance;
     }
 
+    public void setMockClass(final Class<T> mockClass) {
+        this.mockClass = mockClass;
+    }
+
+    public void setMockitoMockSettings(final MockitoMockSettings mockitoMockSettings) {
+        this.mockitoMockSettings = mockitoMockSettings;
+    }
+
+    private MockSettings getMockitoMockSettings() {
+        if(mockitoMockSettings == null){
+            mockitoMockSettings = MockitoMockSettings.DEFAULT;
+        }
+        return mockitoMockSettings.getMockSettings();
+    }
+
+    public void reset() {
+        try {
+            Mockito.<Object>reset(getObject());
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to reset a mock", e);
+        }
+    }
 }

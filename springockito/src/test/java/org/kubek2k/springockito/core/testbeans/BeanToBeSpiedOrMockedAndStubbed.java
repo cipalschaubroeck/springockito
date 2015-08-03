@@ -1,4 +1,4 @@
-package org.kubek2k.mockito.spring.testbeans;
+package org.kubek2k.springockito.core.testbeans;
 
 import org.springframework.stereotype.Component;
 

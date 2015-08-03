@@ -1,14 +1,4 @@
-package org.kubek2k.mockito.spring;
-
-import org.kubek2k.mockito.spring.testbeans.BeanToBeInjectedWithSpy;
-import org.kubek2k.mockito.spring.testbeans.BeanToBeSpiedOrMockedAndStubbed;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.Test;
-
-import javax.annotation.Resource;
-import java.util.Date;
+package org.kubek2k.springockito.core;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
@@ -16,6 +6,17 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+
+import java.util.Date;
+
+import javax.annotation.Resource;
+
+import org.kubek2k.springockito.core.testbeans.BeanToBeInjectedWithSpy;
+import org.kubek2k.springockito.core.testbeans.BeanToBeSpiedOrMockedAndStubbed;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.Test;
 
 @ContextConfiguration(locations = {"classpath*:/spring/parentContext.xml", "classpath*:/spring/mockitoSpyContext.xml"})
 public class MockitoSpyHandlerIntegrationTest extends AbstractTestNGSpringContextTests {

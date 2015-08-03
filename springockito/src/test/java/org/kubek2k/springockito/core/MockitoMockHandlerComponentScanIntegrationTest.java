@@ -1,8 +1,8 @@
-package org.kubek2k.mockito.spring;
+package org.kubek2k.springockito.core;
 
 import static org.testng.Assert.assertNotNull;
 
-import org.kubek2k.mockito.spring.testbeans.BeanAutowiringMock;
+import org.kubek2k.springockito.core.testbeans.BeanAutowiringMock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;

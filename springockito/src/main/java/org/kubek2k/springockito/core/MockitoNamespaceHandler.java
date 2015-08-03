@@ -1,4 +1,4 @@
-package org.kubek2k.mockito.spring;
+package org.kubek2k.springockito.core;
 
 import org.springframework.beans.factory.xml.NamespaceHandler;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;

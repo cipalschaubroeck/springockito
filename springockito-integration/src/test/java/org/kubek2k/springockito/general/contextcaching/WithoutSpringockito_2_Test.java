@@ -1,13 +1,13 @@
 package org.kubek2k.springockito.general.contextcaching;
 
+import static org.fest.assertions.Assertions.assertThat;
+import static org.kubek2k.tools.TestUtil.isMock;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import static org.fest.assertions.Assertions.assertThat;
-import static org.kubek2k.tools.TestUtil.isMock;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring/general/contextcaching/context.xml")
@@ -18,6 +18,8 @@ public class WithoutSpringockito_2_Test {
 
     @Test
     public void shouldGetNoMock() {
+        TestSuiteToImposeTestsOrder.insideSuite.assume();
+
         //given
         //bean injected
 

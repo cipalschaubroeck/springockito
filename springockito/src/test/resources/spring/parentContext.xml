@@ -5,8 +5,8 @@
 
     <bean id="dateToBeSpied" class="java.util.Date"/>
 
-    <bean id="beanToBeSpiedAndStubbed" class="org.kubek2k.mockito.spring.testbeans.BeanToBeSpiedOrMockedAndStubbed"/>
+    <bean id="beanToBeSpiedAndStubbed" class="org.kubek2k.springockito.core.testbeans.BeanToBeSpiedOrMockedAndStubbed"/>
 
-    <bean id="beanToBeInjectedWithSpy" class="org.kubek2k.mockito.spring.testbeans.BeanToBeInjectedWithSpy"/>
+    <bean id="beanToBeInjectedWithSpy" class="org.kubek2k.springockito.core.testbeans.BeanToBeInjectedWithSpy"/>
 
 </beans>

@@ -5,8 +5,12 @@ This is a small extension to spring that simplifies way of creation mockito mock
 ## Release Notes
 ### 1.1.0 (unreleased)
 * Initial forked release
+* Removed unit tests for multi threading support, this support is broken anyhow.
+* Refactoring: springockito is now springockito-core, this is to reflect that it is the base for springockito-annotations.
+* Refactoring: published as org.github.kmoens, instead of the original one to signal the difference.
 * Springockito-Core: remove support for the static map, this should not be needed anymore as documented by the author of the original pull request.
 * Springockito-Annotations: remove custom creation of mocks/spys, rely on Springockito-Core instead.
+* Support for Mockito 1.9.5 or later
 
 ## Springockito-Core - Usage
 ### Mocking
