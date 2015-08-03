@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.kubek2k</groupId>
+    <groupId>org.github.kmoens</groupId>
     <artifactId>springockito-parent</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
-    <url>https://bitbucket.org/kubek2k/springockito</url>
+    <version>1.1.0-SNAPSHOT</version>
+    <url>https://github.com/kmoens/springockito</url>
     <name>Springockito parent</name>
     <packaging>pom</packaging>
 
@@ -17,11 +17,16 @@
         <license>
             <name>MIT</name>
             <url>http://www.opensource.org/licenses/mit-license.php</url>
-            <comments>Copyright (c) 2011 Jakub Janczak</comments>
+            <comments>Copyright (c) 2011-2015 Jakub Janczak, Kenny Moens</comments>
         </license>
     </licenses>
 
     <developers>
+        <developer>
+            <id>kmoens</id>
+            <email>kmoens@users.noreply.github.com</email>
+            <name>Kenny Moens</name>
+        </developer>
         <developer>
             <id>kubek2k</id>
             <email>kubek2k@gmail.com</email>
@@ -30,9 +35,9 @@
     </developers>
 
     <scm>
-        <url>https://bitbucket.org/kubek2k/springockito</url>
-        <connection>https://bitbucket.org/kubek2k/springockito/</connection>
-        <developerConnection>scm:hg:https://bitbucket.org/kubek2k/springockito/</developerConnection>
+        <url>https://github.com/kmoens/springockito.git</url>
+        <connection>https://github.com/kmoens/springockito.git</connection>
+        <developerConnection>scm:git:https://github.com/kmoens/springockito.git</developerConnection>
     </scm>
 
     <properties>
@@ -45,8 +50,8 @@
 
             <dependency>
                 <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>1.9.0</version>
+                <artifactId>mockito-core</artifactId>
+                <version>1.10.19</version>
             </dependency>
 
             <dependency>
