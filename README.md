@@ -3,7 +3,7 @@
 This is a small extension to spring that simplifies way of creation mockito mocks in the intergation tests' related context xml files.
 
 ## Release Notes
-### 1.1.0 (unreleased)
+### 1.1.0
 * Initial forked release
 * Removed unit tests for multi threading support, this support is broken anyhow.
 * Refactoring: springockito is now springockito-core, this is to reflect that it is the base for springockito-annotations.
