@@ -2,7 +2,6 @@ package org.kubek2k.springockito.general.reset.xml.mock.everymethod;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kubek2k.springockito.annotations.SpringockitoContextLoader;
 import org.kubek2k.springockito.annotations.experimental.junit.AbstractJUnit4SpringockitoContextTests;
 import org.kubek2k.springockito.general.reset.MockedBean;
 import org.kubek2k.tools.Ordered;
@@ -11,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import javax.annotation.Resource;
 
-import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
