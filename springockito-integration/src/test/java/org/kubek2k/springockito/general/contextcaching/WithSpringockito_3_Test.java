@@ -5,7 +5,8 @@ import static org.fest.assertions.Assertions.assertThat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kubek2k.springockito.annotations.SpringockitoContextLoader;
-import org.mockito.internal.util.MockUtil;
+import org.kubek2k.tools.TestUtil;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -28,9 +29,7 @@ public class WithSpringockito_3_Test {
         bean.incrementState();
 
         //then
-        assertThat(bean.getState())
-                .isEqualTo(2);
-        assertThat(new MockUtil().isMock(bean))
-                .isTrue();
+        assertThat(bean.getState()).isEqualTo(2);
+        assertThat(TestUtil.isMock(bean)).isTrue();
     }
 }
