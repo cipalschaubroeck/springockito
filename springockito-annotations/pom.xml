@@ -8,14 +8,14 @@
     <parent>
         <groupId>org.github.kmoens</groupId>
         <artifactId>springockito-parent</artifactId>
-        <version>1.1.1</version>
+        <version>1.2.0</version>
     </parent>
 
     <dependencies>
         <dependency>
             <groupId>org.github.kmoens</groupId>
             <artifactId>springockito-core</artifactId>
-            <version>1.1.0</version>
+            <version>1.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -47,6 +47,10 @@
         <dependency>
             <groupId>org.easytesting</groupId>
             <artifactId>fest-assert</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
         </dependency>
     </dependencies>
 </project>
