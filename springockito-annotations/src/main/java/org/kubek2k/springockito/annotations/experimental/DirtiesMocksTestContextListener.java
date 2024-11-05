@@ -11,7 +11,7 @@ import org.springframework.test.context.support.AbstractTestExecutionListener;
 public class DirtiesMocksTestContextListener extends AbstractTestExecutionListener {
 
     @Override
-    public void afterTestMethod(final TestContext testContext) throws Exception {
+    public void afterTestMethod(final TestContext testContext) {
         Method testMethod = testContext.getTestMethod();
         Class<?> testClass = testContext.getTestClass();
         if (testMethod.isAnnotationPresent(DirtiesMocks.class) || afterEveryMethodModeSet(testClass)) {
@@ -25,7 +25,7 @@ public class DirtiesMocksTestContextListener extends AbstractTestExecutionListen
     }
 
     @Override
-    public void afterTestClass(final TestContext testContext) throws Exception {
+    public void afterTestClass(final TestContext testContext) {
         Class<?> testClass = testContext.getTestClass();
         if (afterClassModeSet(testClass)) {
             resetMocks(testContext);

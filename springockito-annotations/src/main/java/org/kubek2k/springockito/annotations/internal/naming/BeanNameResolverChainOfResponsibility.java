@@ -12,7 +12,7 @@ public class BeanNameResolverChainOfResponsibility implements BeanNameResolver {
     private List<AbstractBeanNameResolver> resolversChain;
 
     public BeanNameResolverChainOfResponsibility() {
-        this.resolversChain = new ArrayList<AbstractBeanNameResolver>();
+        this.resolversChain = new ArrayList<>();
         Collections.addAll(resolversChain,
                 new ExplicitBeanNameNameResolver(),
                 new ExplicitBeanNameStrategyBeanNameResolver(),

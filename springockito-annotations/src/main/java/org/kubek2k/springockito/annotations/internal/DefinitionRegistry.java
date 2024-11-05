@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class DefinitionRegistry {
 
-    private Map<String, SpringockitoDefinition> springockitoDefinitionMap = new HashMap<String, SpringockitoDefinition>();
+    private Map<String, SpringockitoDefinition> springockitoDefinitionMap = new HashMap<>();
 
     public void registerAll(Set<SpringockitoDefinition> springockitoDefinitions) {
         for (SpringockitoDefinition springockitoDefinition : springockitoDefinitions) {

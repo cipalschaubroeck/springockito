@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.TYPE})
 public @interface DirtiesMocks {
 
-    static enum ClassMode {
+    enum ClassMode {
 
         AFTER_CLASS,
         AFTER_EACH_TEST_METHOD

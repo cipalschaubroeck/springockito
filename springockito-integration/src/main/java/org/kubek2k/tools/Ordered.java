@@ -9,9 +9,9 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Ordered {
 
-    public int FIRST = Integer.MIN_VALUE;
-    public int LAST = Integer.MAX_VALUE;
-    public int DEFAULT = 0;
+    int FIRST = Integer.MIN_VALUE;
+    int LAST = Integer.MAX_VALUE;
+    int DEFAULT = 0;
 
     int value() default DEFAULT;
 
