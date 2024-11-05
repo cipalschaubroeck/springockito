@@ -2,30 +2,31 @@ package org.kubek2k.springockito.core.internal.mock;
 
 import org.mockito.Answers;
 import org.mockito.MockSettings;
-import org.mockito.internal.creation.MockSettingsImpl;
+import org.mockito.Mockito;
+import org.mockito.stubbing.Answer;
 
 public class MockitoMockSettings {
 
     public static final MockitoMockSettings DEFAULT = new MockitoMockSettings();
     private Class<?>[] extraInterfaces;
     private String mockName;
-    private Answers defaultAnswer;
+    private Answer<?> defaultAnswer;
 
     public MockSettings getMockSettings() {
         return createMockSettings();
     }
 
     private MockSettings createMockSettings() {
-        MockSettings mockSettings = new MockSettingsImpl();
+        MockSettings mockSettings = Mockito.withSettings();
 
         if (extraInterfaces != null && extraInterfaces.length > 0) {
             mockSettings.extraInterfaces(extraInterfaces);
         }
 
         if (defaultAnswer != null) {
-            mockSettings.defaultAnswer(defaultAnswer.get());
+            mockSettings.defaultAnswer(defaultAnswer);
         } else {
-            mockSettings.defaultAnswer(Answers.RETURNS_DEFAULTS.get());
+            mockSettings.defaultAnswer(Answers.RETURNS_DEFAULTS);
         }
 
         if (mockName != null) {
@@ -44,7 +45,7 @@ public class MockitoMockSettings {
         return this;
     }
 
-    public MockitoMockSettings withDefaultAnswer(final Answers defaultAnswer) {
+    public MockitoMockSettings withDefaultAnswer(final Answer<?> defaultAnswer) {
         this.defaultAnswer = defaultAnswer;
         return this;
     }
