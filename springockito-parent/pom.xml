@@ -35,6 +35,15 @@
         <developerConnection>scm:git:https://github.com/kmoens/springockito.git</developerConnection>
     </scm>
 
+    <!-- Distribution Managment -->
+    <distributionManagement>
+        <repository>
+            <id>cs-releases</id>
+            <name>CS Deployment Repository</name>
+            <url>${repo.url}</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>5.3.39</spring.version>

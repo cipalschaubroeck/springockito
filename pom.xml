@@ -7,7 +7,13 @@
   <artifactId>springockito</artifactId>
   <version>1.2.0</version>
   <packaging>pom</packaging>
-
+     <distributionManagement>
+        <repository>
+            <id>cs-releases</id>
+            <name>CS Deployment Repository</name>
+            <url>${repo.url}</url>
+        </repository>
+    </distributionManagement> 
   <modules>
     <module>springockito-parent</module>
     <module>springockito</module>
