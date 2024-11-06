@@ -7,6 +7,13 @@
     <groupId>org.github.kmoens</groupId>
     <artifactId>springockito-integration</artifactId>
     <version>1.2.0</version>
+    
+    <parent>
+        <groupId>org.github.kmoens</groupId>
+        <artifactId>springockito-parent</artifactId>
+        <version>1.2.0</version>
+        <relativePath>../springockito-parent</relativePath>
+    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

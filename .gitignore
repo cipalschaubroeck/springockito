@@ -1,0 +1,75 @@
+### Atlas specifiek
+/local/
+atlas-configuration/atlas-configuration-ria/app/bower_components
+atlas-configuration/atlas-configuration-ria/node_modules
+atlas-configuration/atlas-configuration-ria/node
+atlas-remote/invm-monitor.log
+atlas-remote/someservice-monitor.log
+atlas-remote/someservice-proxy-monitor.log
+atlas-remote/tracer.log
+
+### IntelliJ IDEA
+/.idea/
+*.iml
+
+### Eclipse
+.metadata
+.settings/
+
+# Eclipse Core
+.project
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+
+### Mogelijk SVN-restant
+/.svn/
+
+### Windows
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+### TortoiseGit
+# Project-level settings
+/.tgitconfig
+
+### Java
+*.class
+#uitzondering:
+!/atlas-remote/src/main/resources/org/springframework/remoting/rmi/RmiInvocationWrapper_Stub.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+#uitzondering:
+!/atlas-jetty/src/test/resources/testdata/getdownservlet/app1/test.jar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+### Maven
+target/
+release.properties
+
+### Linux
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*

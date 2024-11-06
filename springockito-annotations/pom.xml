@@ -9,6 +9,7 @@
         <groupId>org.github.kmoens</groupId>
         <artifactId>springockito-parent</artifactId>
         <version>1.2.0</version>
+        <relativePath>../springockito-parent</relativePath>
     </parent>
 
     <dependencies>
