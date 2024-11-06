@@ -18,7 +18,7 @@ public class SpringockitoDefinitionFinder {
 
     public Set<SpringockitoDefinition> findSpringockitoDefinitions(Class<?> clazz) {
 
-        Set<SpringockitoDefinition> result = new HashSet<SpringockitoDefinition>();
+        Set<SpringockitoDefinition> result = new HashSet<>();
 
         while (clazz != null) {
             result.addAll(findDefinitions(clazz));
@@ -30,7 +30,7 @@ public class SpringockitoDefinitionFinder {
 
     private Set<SpringockitoDefinition> findDefinitions(Class<?> currentClass) {
 
-        Set<SpringockitoDefinition> definitions = new HashSet<SpringockitoDefinition>();
+        Set<SpringockitoDefinition> definitions = new HashSet<>();
 
         for (Field field : currentClass.getDeclaredFields()) {
             if (field.isAnnotationPresent(ReplaceWithMock.class)) {

@@ -1,6 +1,6 @@
 package org.kubek2k.springockito.annotations.it;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.kubek2k.springockito.annotations.ReplaceWithMock;
 import org.kubek2k.springockito.annotations.SpringockitoContextLoader;
 import org.kubek2k.springockito.annotations.it.beans.InnerBean;

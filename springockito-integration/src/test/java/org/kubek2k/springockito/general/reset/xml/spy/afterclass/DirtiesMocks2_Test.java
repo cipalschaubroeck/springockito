@@ -11,7 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import javax.annotation.Resource;
 
-import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 

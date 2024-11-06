@@ -18,7 +18,7 @@ public class MockitoMockFactory<T> implements FactoryBean<T>, SpringockitoResett
         return true;
     }
 
-    public T getObject() throws Exception {
+    public T getObject() {
         if (thisInstance == null) {
             thisInstance = Mockito.mock(mockClass, getMockitoMockSettings());
         }

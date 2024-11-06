@@ -1,21 +1,18 @@
 package org.kubek2k.springockito.core;
 
 import static org.fest.assertions.Assertions.assertThat;
+import static org.mockito.Mockito.anyString;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Matchers.anyString;
-import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
+import static org.mockito.Mockito.verify;
 
 import javax.annotation.Resource;
 
 import org.kubek2k.springockito.core.testbeans.BeanToBeSpiedOrMockedAndStubbed;
-import org.mockito.cglib.proxy.Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
-
 
 @ContextConfiguration(locations = {"classpath*:/spring/mockitoContext.xml"})
 public class MockitoMockHandlerIntegrationTest extends AbstractTestNGSpringContextTests {
@@ -32,12 +29,8 @@ public class MockitoMockHandlerIntegrationTest extends AbstractTestNGSpringConte
 
     @Test
     public void shouldLoadMockitoMock() {
-        assertNotNull(someFancyClass);
-        assertTrue(someFancyClass instanceof Factory);
-
-        assertNotNull(someFancyClass2);
-        assertTrue(someFancyClass2 instanceof Factory);
-
+        assertThat(someFancyClass).isNotNull();
+        assertThat(someFancyClass2).isNotNull();
     }
 
     @Test
@@ -51,7 +44,8 @@ public class MockitoMockHandlerIntegrationTest extends AbstractTestNGSpringConte
         String returnedString = beanToBeMockedAndStubbed.methodWithArgument("someString");
 
         //then
-        assertThat(returnedString)
-                .isEqualTo(fixedReturnValue);
+        assertThat(returnedString).isEqualTo(fixedReturnValue);
+
+        verify(beanToBeMockedAndStubbed).methodWithArgument("someString");
     }
 }

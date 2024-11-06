@@ -1,6 +1,6 @@
 package org.kubek2k.springockito.annotations.contextcache;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.kubek2k.springockito.annotations.it.beans.InnerBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

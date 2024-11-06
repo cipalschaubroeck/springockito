@@ -15,7 +15,7 @@ public class InsideSuiteRule extends ExternalResource {
 
 
     @Override
-    protected void before() throws Throwable {
+    protected void before() {
         insideSuite = true;
     }
 
